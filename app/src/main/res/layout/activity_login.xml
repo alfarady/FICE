@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.splash.SplashActivity"
+    android:background="@drawable/bg_gradient">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fice"
+            android:textSize="104sp"
+            app:fontFamily="@font/montserrat_medium"
+            android:textColor="#FFF"/>
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_marginTop="50dp"
+            android:layout_width="335dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_form"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:alpha="0.8"/>
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_marginTop="46dp"
+            android:layout_width="335dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_form"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:alpha="0.8"/>
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_button_welcome"
+            android:fontFamily="@font/montserrat_light"
+            android:text="Login Now"
+            android:textColor="@color/colorWhite"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="I don't have account"
+            android:fontFamily="@font/montserrat_light"
+            android:textSize="19dp"
+            android:textColor="#FFF"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

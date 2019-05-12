@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorGradient2</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="fragmentClub" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorToolbar</item>
+        <item name="colorAccent">@color/colorGradient1</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="toolbarFont" parent="fragmentClub">
+        <item name="android:fontFamily">@font/neo_sans</item>
+    </style>
+
+    <style name="hideActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#00ffffff</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+    </style>
+
+    <style name="hideActionBarPage" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#00ffffff</item>
+        <item name="colorPrimaryDark">@color/colorToolbar</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
