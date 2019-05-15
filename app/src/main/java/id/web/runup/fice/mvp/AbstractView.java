@@ -1,10 +1,14 @@
 package id.web.runup.fice.mvp;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import id.web.runup.fice.R;
@@ -50,7 +54,12 @@ public abstract class AbstractView extends AppCompatActivity implements IView{
 
     public void showMessage(String text) {
         if (text == null || text.isEmpty()) return;
-        Snackbar.make(getWindow().getDecorView().getRootView(), text, Snackbar.LENGTH_LONG).show();
+        Snackbar sb = Snackbar.make(getWindow().getDecorView().findViewById(android.R.id.content), text, Snackbar.LENGTH_LONG);
+        View sbView = sb.getView();
+        sbView.setBackgroundColor(Color.WHITE);
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(Color.RED);
+        sb.show();
     }
 
     public void showToast(int resId) {

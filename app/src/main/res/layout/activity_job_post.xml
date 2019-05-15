@@ -153,23 +153,33 @@
                             android:layout_height="match_parent">
 
                             <EditText
-                                android:id="@+id/editText"
+                                android:id="@+id/etJobTitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="28dp"
+                                android:maxLength="50"
+                                android:hint="Max 50 Characters"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
+                                android:singleLine="true"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <EditText
+                                android:id="@+id/etJobDesc"
+                                android:hint="Max 250 Characters"
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
+                                android:maxLength="250"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginBottom="8dp"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                                app:layout_constraintTop_toBottomOf="@+id/etJobTitle" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -211,33 +221,38 @@
                                 app:layout_constraintStart_toEndOf="@+id/ic_small_type"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-                            <RadioButton
-                                android:id="@+id/radioButton1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Fulltime"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="@+id/textView"
-                                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-                            <RadioButton
+                            <RadioGroup
+                                android:id="@+id/rbgType"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Freelance"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/radioButton1"
-                                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                                <RadioButton
+                                    android:id="@+id/rbFulltime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="Fulltime"
+                                    android:textColor="#393939"
+                                    android:textSize="15sp" />
+
+                                <RadioButton
+                                    android:id="@+id/rbFreelance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="50dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="Freelance"
+                                    android:textColor="#393939"
+                                    android:textSize="15sp" />
+                            </RadioGroup>
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -279,33 +294,38 @@
                                 app:layout_constraintStart_toEndOf="@+id/ic_small_cat"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-                            <RadioButton
-                                android:id="@+id/radioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="IT"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="@+id/textView2"
-                                app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-                            <RadioButton
+                            <RadioGroup
+                                android:id="@+id/rbgCategory"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Education"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/textView2"
-                                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                                <RadioButton
+                                    android:id="@+id/rbIT"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="IT"
+                                    android:textColor="#393939"
+                                    android:textSize="15sp" />
+
+                                <RadioButton
+                                    android:id="@+id/rbEducation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="50dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="Education"
+                                    android:textColor="#393939"
+                                    android:textSize="15sp" />
+                            </RadioGroup>
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -348,12 +368,15 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <EditText
+                                android:id="@+id/etAddress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
                                 android:hint="Jalan Semarang No. 111 Surabaya"
+                                android:singleLine="true"
+                                android:maxLength="250"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -390,82 +413,98 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-                            <LinearLayout
-                                android:id="@+id/linearLayout2"
-                                android:layout_width="match_parent"
+                            <HorizontalScrollView
+                                android:id="@+id/scroller"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:orientation="horizontal"
+                                android:layout_marginStart="8dp"
+                                android:scrollbarSize="100dp"
+                                android:scrollbars="none"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-                                <Button
-                                    android:layout_width="70dp"
-                                    android:layout_height="20dp"
-                                    android:background="@drawable/bg_button_red"
-                                    android:fontFamily="@font/montserrat_semibold"
-                                    android:paddingLeft="20dp"
-                                    android:paddingRight="20dp"
-                                    android:text="Hour"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/colorWhite"
-                                    android:textSize="10sp" />
+                                <LinearLayout
+                                    android:id="@+id/linearLayout2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="30dp"
+                                    android:orientation="horizontal">
 
-                                <Button
-                                    android:layout_width="70dp"
-                                    android:layout_height="20dp"
-                                    android:layout_marginStart="8dp"
-                                    android:background="@drawable/bg_button_disable"
-                                    android:fontFamily="@font/montserrat_semibold"
-                                    android:paddingLeft="20dp"
-                                    android:paddingRight="20dp"
-                                    android:text="Day"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/colorWhite"
-                                    android:textSize="10sp" />
+                                    <Button
+                                        android:id="@+id/btnHour"
+                                        android:layout_width="70dp"
+                                        android:layout_height="20dp"
+                                        android:background="@drawable/bg_button_red"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="20dp"
+                                        android:text="Hour"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="10sp" />
 
-                                <Button
-                                    android:layout_width="80dp"
-                                    android:layout_height="20dp"
-                                    android:layout_marginStart="8dp"
-                                    android:background="@drawable/bg_button_disable"
-                                    android:fontFamily="@font/montserrat_semibold"
-                                    android:paddingLeft="20dp"
-                                    android:paddingRight="20dp"
-                                    android:text="Month"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/colorWhite"
-                                    android:textSize="10sp" />
+                                    <Button
+                                        android:id="@+id/btnDay"
+                                        android:layout_width="70dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/bg_button_disable"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="20dp"
+                                        android:text="Day"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="10sp" />
 
-                                <Button
-                                    android:layout_width="90dp"
-                                    android:layout_height="20dp"
-                                    android:layout_marginStart="8dp"
-                                    android:background="@drawable/bg_button_disable"
-                                    android:fontFamily="@font/montserrat_semibold"
-                                    android:paddingLeft="20dp"
-                                    android:paddingRight="20dp"
-                                    android:text="Project"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/colorWhite"
-                                    android:textSize="10sp" />
-                            </LinearLayout>
+                                    <Button
+                                        android:id="@+id/btnMonth"
+                                        android:layout_width="80dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/bg_button_disable"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="20dp"
+                                        android:text="Month"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="10sp" />
 
+                                    <Button
+                                        android:id="@+id/btnProject"
+                                        android:layout_width="90dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:background="@drawable/bg_button_disable"
+                                        android:fontFamily="@font/montserrat_semibold"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="20dp"
+                                        android:text="Project"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="10sp" />
+                                </LinearLayout>
+                            </HorizontalScrollView>
                             <EditText
-                                android:id="@+id/editText2"
+                                android:id="@+id/etDuraValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
+                                android:inputType="number"
                                 android:hint="Input Value"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                                app:layout_constraintTop_toBottomOf="@+id/scroller" />
 
                             <TextView
+                                android:id="@+id/txtDura"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -475,8 +514,8 @@
                                 android:textColor="#393939"
                                 android:textSize="13sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/editText2"
-                                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                                app:layout_constraintStart_toEndOf="@+id/etDuraValue"
+                                app:layout_constraintTop_toBottomOf="@+id/scroller" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -540,12 +579,14 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <EditText
+                                android:id="@+id/etSalary"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/montserrat"
                                 android:hint="1000000"
+                                android:inputType="number"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -575,6 +616,7 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/btnPost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button_red"

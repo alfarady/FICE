@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Job Detail"
+                    android:text="Applicant Submission"
                     android:fontFamily="@font/neo_sans"
                     android:textSize="30sp"
                     android:textColor="#393939"
@@ -119,11 +119,12 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat_semibold"
-                                    android:text="Job Seeker"
+                                    android:text="Job Applicant"
                                     android:textColor="#393939"
                                     android:textSize="15sp" />
 
                                 <TextView
+                                    android:id="@+id/asJobAppName"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat"
@@ -148,94 +149,31 @@
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp">
 
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_pin"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
+                            <TextView
+                                android:id="@+id/asEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
                                 android:layout_marginTop="8dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ic_small_pin"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Email Address"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/montserrat_semibold"
-                                android:text="Job Title"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_pin"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
+                                android:id="@+id/asvEmail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Fullstack Programming"
+                                android:text="sunari@gmail.com"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="@+id/textView"
-                                app:layout_constraintTop_toBottomOf="@+id/textView" />
-                        </android.support.constraint.ConstraintLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="90dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/bg_cardhome"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <android.support.constraint.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp">
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_desc"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ic_small_pen"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/montserrat_semibold"
-                                android:text="Job Description"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_desc"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="We are hiring fullstack programming with JS Expert"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_desc"
-                                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                                app:layout_constraintStart_toStartOf="@+id/asEmail"
+                                app:layout_constraintTop_toBottomOf="@+id/asEmail" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -253,42 +191,32 @@
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp">
 
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_type"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
+                            <TextView
+                                android:id="@+id/asMsisdn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
                                 android:layout_marginTop="8dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ic_small_speedo"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Phone Number"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/montserrat_semibold"
-                                android:text="Job Type"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_type"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
+                                android:id="@+id/asvMsisdn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Fulltime / 30 Days"
+                                android:text="+6282240534957"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_type"
-                                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                                app:layout_constraintStart_toStartOf="@+id/asMsisdn"
+                                app:layout_constraintTop_toBottomOf="@+id/asMsisdn" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -306,42 +234,32 @@
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp">
 
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_cat"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
+                            <TextView
+                                android:id="@+id/asAge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
                                 android:layout_marginTop="8dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ic_small_cat"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Age"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/montserrat_semibold"
-                                android:text="Category"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_cat"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
+                                android:id="@+id/asvAge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="IT"
+                                android:text="21"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_cat"
-                                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                                app:layout_constraintStart_toStartOf="@+id/asAge"
+                                app:layout_constraintTop_toBottomOf="@+id/asAge" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
@@ -359,100 +277,78 @@
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp">
 
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_dollar"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:scaleType="center"
-                                android:src="@drawable/ic_small_dollar"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
                             <TextView
-                                android:id="@+id/textView5"
+                                android:id="@+id/asAddress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/montserrat_semibold"
-                                android:text="Salary"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_dollar"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:fontFamily="@font/montserrat"
-                                android:text="Rp 10.000.000"
-                                android:textColor="#393939"
-                                android:textSize="15sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_dollar"
-                                app:layout_constraintTop_toBottomOf="@+id/textView5" />
-                        </android.support.constraint.ConstraintLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="30dp"
-                        android:background="@drawable/bg_cardhome"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <android.support.constraint.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp">
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:id="@+id/ic_small_loc"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/ic_pin_loc"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/textView6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
+                                android:layout_marginStart="20dp"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/montserrat_semibold"
                                 android:text="Address"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_loc"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
+                                android:id="@+id/asvAddress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Jalan Semarang No. 111 Surabaya"
+                                android:text="Jl Kenangan No 68 Surabaya"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toEndOf="@+id/ic_small_loc"
-                                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                                app:layout_constraintStart_toStartOf="@+id/asAddress"
+                                app:layout_constraintTop_toBottomOf="@+id/asAddress" />
                         </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_cardhome"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp">
+
+                            <TextView
+                                android:id="@+id/asCV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="Curriculum Vitae"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/asvCV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/montserrat"
+                                android:text="CV.pdf"
+                                android:textColor="#393939"
+                                android:textSize="15sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/asCV"
+                                app:layout_constraintTop_toBottomOf="@+id/asCV"/>
+                        </android.support.constraint.ConstraintLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
             </android.support.v4.widget.NestedScrollView>
         </android.support.v4.widget.SwipeRefreshLayout>
@@ -466,24 +362,47 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="center">
+                android:layout_height="match_parent">
 
                 <Button
+                    android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/bg_button_red"
                     android:fontFamily="@font/montserrat_semibold"
                     android:paddingLeft="45dp"
                     android:paddingRight="45dp"
-                    android:text="Apply"
+                    android:text="Reject"
                     android:textColor="@color/colorWhite"
-                    android:textSize="15sp" />
-            </LinearLayout>
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_button_green"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:paddingLeft="45dp"
+                    android:paddingRight="45dp"
+                    android:text="Accept"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

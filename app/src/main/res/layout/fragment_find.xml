@@ -21,7 +21,8 @@
             android:contentInsetRight="0dp"
             android:contentInsetEnd="0dp"
             app:contentInsetRight="0dp"
-            app:contentInsetEnd="0dp">
+            app:contentInsetEnd="0dp"
+            app:layout_scrollFlags="scroll|enterAlways">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -128,7 +129,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_gradient"
             android:orientation="vertical"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"

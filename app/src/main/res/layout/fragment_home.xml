@@ -27,10 +27,11 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
-                    <ImageView
+                    <com.makeramen.roundedimageview.RoundedImageView
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:src="@drawable/ic_dp"/>
+                        android:src="@drawable/ic_dp"
+                        app:riv_corner_radius="360dp"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

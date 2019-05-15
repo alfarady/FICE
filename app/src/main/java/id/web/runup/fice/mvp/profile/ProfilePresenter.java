@@ -1,18 +1,17 @@
-package id.web.runup.fice.mvp.register;
+package id.web.runup.fice.mvp.profile;
 
 import android.content.Intent;
 import android.text.TextUtils;
 
-import id.web.runup.fice.R;
 import id.web.runup.fice.data.preferences.UserPreferences;
 import id.web.runup.fice.mvp.AbstractPresenter;
 
-public class RegisterPresenter extends AbstractPresenter {
-    private IRegisterView mView;
+public class ProfilePresenter extends AbstractPresenter {
+    private IProfileView mView;
     UserPreferences mDatabase = new UserPreferences();
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    public RegisterPresenter(IRegisterView mView) {
+    public ProfilePresenter(IProfileView mView) {
         this.mView = mView;
     }
 
@@ -37,7 +36,7 @@ public class RegisterPresenter extends AbstractPresenter {
             this.mView.setFocus("age");
             this.mView.showMsg("Invalid age number");
         } else {
-            this.mView.showMainActivity();
+            this.mView.setDone();
         }
     }
 }

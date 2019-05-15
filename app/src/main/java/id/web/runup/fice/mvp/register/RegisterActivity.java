@@ -1,7 +1,6 @@
 package id.web.runup.fice.mvp.register;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,7 +42,8 @@ public class RegisterActivity extends AbstractView implements IRegisterView {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMainActivity();
+                mPresenter.doRegister(mRegisterEmail.getText().toString().trim(), mRegisterPassword.getText().toString().trim(), mRegisterMsisdn.getText().toString().trim(),
+                        mRegisterFname.getText().toString().trim(), mRegisterAge.getText().toString().trim(), mRegisterCountry.getText().toString().trim());
             }
         });
         mRegisterLogin.setOnClickListener(new View.OnClickListener() {
@@ -69,5 +69,20 @@ public class RegisterActivity extends AbstractView implements IRegisterView {
     @Override
     public void showMsg(String errorMsg) {
         showMessage(errorMsg);
+    }
+
+    @Override
+    public void setFocus(String what){
+        switch (what){
+            case "email": mRegisterEmail.requestFocus();
+                        break;
+            case "password": mRegisterPassword.requestFocus();
+                        break;
+            case "msisdn": mRegisterMsisdn.requestFocus();
+                break;
+            case "age": mRegisterAge.requestFocus();
+                break;
+
+        }
     }
 }

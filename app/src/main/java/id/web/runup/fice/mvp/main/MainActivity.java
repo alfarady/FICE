@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import id.web.runup.fice.R;
 import id.web.runup.fice.mvp.find.FindFragment;
 import id.web.runup.fice.mvp.home.HomeFragment;
+import id.web.runup.fice.mvp.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.nav_profile:
-                setTheme(R.style.AppTheme);
-                //fragment = new TransaksiFragment();
+                setTheme(R.style.SplashTheme);
+                fragment = new ProfileFragment();
                 break;
         }
         return loadFragment(fragment);
