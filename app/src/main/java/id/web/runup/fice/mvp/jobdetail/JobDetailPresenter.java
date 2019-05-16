@@ -14,10 +14,10 @@ public class JobDetailPresenter extends AbstractPresenter {
     }
 
     public void onCreate(Intent intent) {
-        //
+        setDataJobDetail();
     }
 
-    public void postDataJob(){
-
+    public void setDataJobDetail(){
+        this.mView.initDataJobDetail("Sunari de Albert Queue", "Fullstack Programming", "We are hiring fullstack web programming who has good experience at Nodejs and Vuejs", "Fulltime", "IT", "Rp 10.000.000", "Jl Kengangan No 100 Bandung");
     }
 }

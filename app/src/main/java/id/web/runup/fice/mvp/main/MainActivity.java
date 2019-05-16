@@ -1,6 +1,5 @@
 package id.web.runup.fice.mvp.main;
 
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,7 @@ import android.view.MenuItem;
 
 import id.web.runup.fice.R;
 import id.web.runup.fice.mvp.find.FindFragment;
-import id.web.runup.fice.mvp.home.HomeFragment;
+import id.web.runup.fice.mvp.home.HomeView;
 import id.web.runup.fice.mvp.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigation = findViewById(R.id.bottom_nav);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        loadFragment(new HomeFragment());
+        loadFragment(new HomeView());
     }
 
     private boolean loadFragment (Fragment fragment){
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()){
             case R.id.nav_home:
                 setTheme(R.style.AppTheme);
-                fragment = new HomeFragment();
+                fragment = new HomeView();
                 break;
 
             case R.id.nav_search:

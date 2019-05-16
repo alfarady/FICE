@@ -19,6 +19,7 @@ import java.util.List;
 import id.web.runup.fice.R;
 import id.web.runup.fice.data.preferences.IUserPreferences;
 import id.web.runup.fice.data.preferences.UserPreferences;
+import id.web.runup.fice.mvp.applicantsubmission.ApplicantSubmissionActivity;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
     private List<MNotificationAdapter> mNotif;
@@ -51,7 +52,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             @Override
             public void onClick(View v) {
                 if(!isReaded) holder.mDatabase.setNotifReaded(list.getNotifId(), true);
-                //mContext.startActivity(new Intent(mContext, JobDetailActivity.class));
+                mContext.startActivity(new Intent(mContext, ApplicantSubmissionActivity.class));
             }
         });
     }
