@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Find Job"
+                    android:text="Find Teacher"
                     android:fontFamily="@font/neo_sans"
                     android:textSize="30sp"
                     android:textColor="#393939"
@@ -41,6 +41,22 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar">
+            <ProgressBar
+                android:id="@+id/feedProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tolbar"
+                android:backgroundTint="@color/colorToolbar"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshFeed"

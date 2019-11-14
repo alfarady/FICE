@@ -1,5 +1,6 @@
 package id.web.runup.fice.mvp;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,15 +12,17 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import dmax.dialog.SpotsDialog;
 import id.web.runup.fice.R;
 
 public abstract class AbstractView extends AppCompatActivity implements IView{
     protected final String TAG = getClass().getSimpleName();
-    private ProgressDialog mDialog;
+    private AlertDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progressDialog = new SpotsDialog(this, R.style.Custom);
     }
 
     protected abstract IPresenter getPresenter();
@@ -72,20 +75,17 @@ public abstract class AbstractView extends AppCompatActivity implements IView{
 
     @Override
     public void startLoading() {
-        if (mDialog != null && mDialog.isShowing()) {
+        if (progressDialog != null && progressDialog.isShowing()) {
             return;
         }
-        mDialog = new ProgressDialog(this); // , R.style.AppTheme_AlertDialog
-        mDialog.setMessage("Loading...");
-        mDialog.setCancelable(false);
-        mDialog.show();
+        progressDialog.show();
 
     }
 
     @Override
     public void stopLoading() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mDialog.dismiss();
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
         }
     }
 

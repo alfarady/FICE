@@ -1,6 +1,7 @@
 package id.web.runup.fice.mvp.welcome;
 
 import android.content.Intent;
+import android.util.Log;
 
 import id.web.runup.fice.data.preferences.UserPreferences;
 import id.web.runup.fice.mvp.AbstractPresenter;
@@ -14,6 +15,6 @@ public class WelcomePresenter extends AbstractPresenter {
     }
 
     public void onCreate(Intent intent) {
-        //
+        Log.e("GLocation", mDatabase.getUserLocation());
     }
 }

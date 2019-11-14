@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,7 +30,8 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
     RadioGroup mRbGType, mRbGCategory;
     RadioButton mRbFulltime, mRbFreelance, mRbIT, mRbEducaation;
     Button mBtnHour, mBtnDay, mBtnMonth, mBtnProject, mBtnPost;
-    String szDuration, szCategory, szType;
+    String szDuration;
+    int iType = 0, iCategory = 0;
     JobPostPresenter mPresenter = new JobPostPresenter(this);
 
     @Override
@@ -65,6 +67,13 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
     }
 
     private void initListener(){
+        ImageView mBack = findViewById(R.id.btnBack);
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mBtnHour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,11 +136,12 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch(checkedId){
                     case R.id.rbFulltime:
-                        szType = "Fulltime";
+                        iType = 1;
                         break;
                     case R.id.rbFreelance:
-                        szType = "Freelance";
+                        iType = 2;
                         break;
+                    default: iType = 0;
                 }
             }
         });
@@ -141,11 +151,12 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch(checkedId){
                     case R.id.rbIT:
-                        szCategory = "IT";
+                        iCategory = 1;
                         break;
                     case R.id.rbEducation:
-                        szCategory = "Education";
+                        iCategory = 2;
                         break;
+                    default: iCategory = 0;
                 }
             }
         });
@@ -154,7 +165,7 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
             @Override
             public void onClick(View v) {
                 szDuration = mEtDuraValue.getText().toString().trim() + " " + mTxtDura.getText().toString().trim();
-                mPresenter.postDataJob(mEtJobTitle.getText().toString().trim(), mEtJobDesc.getText().toString().trim(), szType, szCategory, mEtAddress.getText().toString().trim(), szDuration, mEtSalary.getText().toString().trim());
+                mPresenter.postDataJob(mEtJobTitle.getText().toString().trim(), mEtJobDesc.getText().toString().trim(), iType, iCategory, mEtAddress.getText().toString().trim(), szDuration, mEtSalary.getText().toString().trim());
             }
         });
     }
@@ -162,7 +173,7 @@ public class JobPostActivity extends AbstractView implements IJobPostView {
     @Override
     public void showComplateActivity() {
         Intent tipeMasuk = new Intent(JobPostActivity.this, DoneActivity.class);
-        tipeMasuk.putExtra("hrd", true);
+        tipeMasuk.putExtra("isHrd", "hrd");
         startActivity(tipeMasuk);
         finish();
     }

@@ -8,11 +8,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,11 +25,13 @@ import id.web.runup.fice.R;
 import id.web.runup.fice.data.preferences.IUserPreferences;
 import id.web.runup.fice.data.preferences.UserPreferences;
 import id.web.runup.fice.helpers.WebviewActivity;
+import id.web.runup.fice.mvp.applicantsubmission.ApplicantSubmissionActivity;
 import id.web.runup.fice.mvp.done.DoneActivity;
 import id.web.runup.fice.mvp.feed.FeedActivity;
 import id.web.runup.fice.mvp.jobdetail.JobDetailActivity;
 import id.web.runup.fice.mvp.jobpost.JobPostActivity;
 import id.web.runup.fice.mvp.notification.NotificationActivity;
+import id.web.runup.fice.mvp.welcome.WelcomeActivity;
 
 public class HomeView extends Fragment implements IHomeView {
 
@@ -36,7 +40,9 @@ public class HomeView extends Fragment implements IHomeView {
     Button mBtnChangeRoles;
     IUserPreferences mDatabase;
     LinearLayout mBellNotif;
+    ProgressBar mProgressBar;
     HomePresenter mPresenter = new HomePresenter(this);
+    SwipeRefreshLayout refreshBeranda;
 
     @Nullable
     @Override
@@ -56,20 +62,22 @@ public class HomeView extends Fragment implements IHomeView {
         mBellNotif = v.findViewById(R.id.bellNotif);
         mGreetingName = v.findViewById(R.id.greeting_name);
         mImgDp = v.findViewById(R.id.homeDp);
+        mProgressBar = v.findViewById(R.id.homeProgressBar);
+        refreshBeranda = v.findViewById(R.id.refreshHome);
 
-        this.initListener();
+        this.initListener(v);
         mPresenter.onCreate(getActivity().getIntent());
         return v;
     }
 
-    private void initListener(){
+    private void initListener(View v){
         if(mDatabase.getRoles().equals("worker")) {
-            mTxtLeftButton.setText("Part \nTime Job");
-            mTxtRightButton.setText("Find a Job");
+            mTxtLeftButton.setText("Be Mentor");
+            mTxtRightButton.setText("Be Teacher");
             mFindJobRoundedImgView.setImageResource(R.drawable.bg_findwork);
         } else if(mDatabase.getRoles().equals("hrd")) {
-            mTxtLeftButton.setText("Find \nFreelance");
-            mTxtRightButton.setText("Find Worker");
+            mTxtLeftButton.setText("Find Mentor");
+            mTxtRightButton.setText("Find Teacher");
             mFindJobRoundedImgView.setImageResource(R.drawable.bg_findwork_hrd);
         }
 
@@ -89,13 +97,13 @@ public class HomeView extends Fragment implements IHomeView {
             public void onClick(View v) {
                 if(mDatabase.getRoles().equals("worker")) {
                     mDatabase.setRoles("hrd");
-                    mTxtLeftButton.setText("Find \nFreelance");
-                    mTxtRightButton.setText("Find a Job");
+                    mTxtLeftButton.setText("Find Mentor");
+                    mTxtRightButton.setText("Find Teacher");
                     mFindJobRoundedImgView.setImageResource(R.drawable.bg_findwork_hrd);
                 } else if(mDatabase.getRoles().equals("hrd")) {
                     mDatabase.setRoles("worker");
-                    mTxtLeftButton.setText("Part \nTime Job");
-                    mTxtRightButton.setText("Find Worker");
+                    mTxtLeftButton.setText("Be Mentor");
+                    mTxtRightButton.setText("Be Teacher");
                     mFindJobRoundedImgView.setImageResource(R.drawable.bg_findwork);
                 }
             }
@@ -105,6 +113,37 @@ public class HomeView extends Fragment implements IHomeView {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), NotificationActivity.class));
+            }
+        });
+
+        mCatEdu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tipeMasuk = new Intent(getContext(), FeedActivity.class);
+                tipeMasuk.putExtra("cat", 2);
+                startActivity(tipeMasuk);
+            }
+        });
+
+        mCatIT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tipeMasuk = new Intent(getContext(), FeedActivity.class);
+                tipeMasuk.putExtra("cat", 1);
+                startActivity(tipeMasuk);
+            }
+        });
+
+        mPartTimeJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mDatabase.getRoles().equals("worker")) {
+                    Intent tipeMasuk = new Intent(getContext(), FeedActivity.class);
+                    tipeMasuk.putExtra("type", 2);
+                    startActivity(tipeMasuk);
+                } else if(mDatabase.getRoles().equals("hrd")) {
+                    startActivity(new Intent(getActivity(), JobPostActivity.class));
+                }
             }
         });
 
@@ -125,14 +164,40 @@ public class HomeView extends Fragment implements IHomeView {
                 startActivity(tipeMasuk);
             }
         });
+
+        refreshBeranda.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mProgressBar.setVisibility(View.VISIBLE);
+                mPresenter.setDataHome();
+            }
+        });
     }
 
     @Override
     public void initDataHome(String greeting_name, String ava_url){
-        mGreetingName.setText(greeting_name);
-        Glide.with(getContext())
-                .asBitmap()
-                .load(ava_url)
-                .into(mImgDp);
+        mProgressBar.setVisibility(View.GONE);
+        refreshBeranda.setRefreshing(false);
+        final String firstName;
+        if(greeting_name.contains(" ")){
+            String temp[] = greeting_name.split(" ");
+            firstName = temp[0];
+        } else {
+            firstName = greeting_name;
+        }
+
+        mGreetingName.setText(firstName);
+        if(!ava_url.equals("default.jpg")) {
+            Glide.with(getContext())
+                    .asBitmap()
+                    .load(ava_url)
+                    .into(mImgDp);
+        }
+    }
+
+    @Override
+    public void startWelcomeActivity() {
+        startActivity(new Intent(getActivity(), WelcomeActivity.class));
+        getActivity().finish();
     }
 }

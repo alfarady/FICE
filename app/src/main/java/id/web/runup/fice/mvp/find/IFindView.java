@@ -6,4 +6,5 @@ import id.web.runup.fice.data.adapter.MFeedAdapter;
 
 public interface IFindView {
     void initRecyclerView(List<MFeedAdapter> mFeed);
+    void startWelcomeActivity();
 }

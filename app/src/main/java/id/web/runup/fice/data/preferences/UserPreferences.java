@@ -1,6 +1,9 @@
 package id.web.runup.fice.data.preferences;
 
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import java.util.HashMap;
 
 public class UserPreferences implements IUserPreferences {
     protected SharedPreferences mPreferences;
@@ -52,5 +55,35 @@ public class UserPreferences implements IUserPreferences {
     @Override
     public void unSetNotifReaded(int id) {
         mPreferences.edit().putBoolean("notifReadedId"+id, false).apply();
+    }
+
+    @Override
+    public void setUserNotifToken(String token) {
+        mPreferences.edit().putString("notifToken", token).apply();
+    }
+
+    @Override
+    public String getUserNotifToken() {
+        return mPreferences.getString("notifToken", "");
+    }
+
+    @Override
+    public void unSetNotifUserToken() {
+        mPreferences.edit().putString("notifToken", "").apply();
+    }
+
+    @Override
+    public void setLocation(String coordinate) {
+        mPreferences.edit().putString("coordinate", coordinate).apply();
+    }
+
+    @Override
+    public String getUserLocation() {
+        return mPreferences.getString("coordinate", "0, 0");
+    }
+
+    @Override
+    public void unSetLocation() {
+        mPreferences.edit().putString("coordinate", "0, 0").apply();
     }
 }

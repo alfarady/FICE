@@ -38,7 +38,7 @@ public class LoginActivity extends AbstractView implements ILoginView {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMainActivity();
+                mPresenter.doLogin(mLoginEmail.getText().toString().trim(), mLoginPassword.getText().toString().trim());
             }
         });
         mLoginRegister.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +64,15 @@ public class LoginActivity extends AbstractView implements ILoginView {
     @Override
     public void showMsg(String errorMsg) {
         showMessage(errorMsg);
+    }
+
+    @Override
+    public void setFocus(String what){
+        switch (what){
+            case "email": mLoginEmail.requestFocus();
+                break;
+            case "password": mLoginPassword.requestFocus();
+                break;
+        }
     }
 }

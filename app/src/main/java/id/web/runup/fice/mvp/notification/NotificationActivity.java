@@ -7,6 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.onesignal.OSNotification;
+import com.onesignal.OSNotificationOpenResult;
+import com.onesignal.OneSignal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +19,9 @@ import id.web.runup.fice.data.adapter.MNotificationAdapter;
 import id.web.runup.fice.data.adapter.NotificationAdapter;
 import id.web.runup.fice.mvp.AbstractView;
 import id.web.runup.fice.mvp.IPresenter;
+import id.web.runup.fice.mvp.feed.FeedActivity;
 import id.web.runup.fice.mvp.main.MainActivity;
+import id.web.runup.fice.mvp.welcome.WelcomeActivity;
 
 public class NotificationActivity extends AbstractView implements INotificationView {
 
@@ -55,6 +61,12 @@ public class NotificationActivity extends AbstractView implements INotificationV
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(NotificationActivity.this);
         mRVListNotif.setLayoutManager(layoutManager);
         mRVListNotif.setAdapter(adapter);
+    }
+
+    @Override
+    public void startWelcomeActivity() {
+        startActivity(new Intent(NotificationActivity.this, WelcomeActivity.class));
+        finish();
     }
 
     @Override

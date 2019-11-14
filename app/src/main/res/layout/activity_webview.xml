@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Fice"
+                    android:text="Te.Me"
                     android:fontFamily="@font/neo_sans"
                     android:textSize="30sp"
                     android:textColor="#393939"
@@ -56,6 +56,22 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar">
+            <ProgressBar
+                android:id="@+id/wvProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tolbar"
+                android:backgroundTint="@color/colorToolbar"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
     </android.support.design.widget.AppBarLayout>
     <WebView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

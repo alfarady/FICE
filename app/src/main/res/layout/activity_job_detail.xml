@@ -42,6 +42,22 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar">
+            <ProgressBar
+                android:id="@+id/jobDetailProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tolbar"
+                android:backgroundTint="@color/colorToolbar"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -49,7 +65,7 @@
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/refreshFeed"
+            android:id="@+id/refreshJobDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="56dp"
@@ -137,7 +153,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bg_cardhome"
                         android:gravity="center"
@@ -179,7 +195,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Fullstack Programming"
+                                android:text="Math Tutor"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -190,7 +206,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="90dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/bg_cardhome"
                         android:gravity="center"
@@ -233,7 +249,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="We are hiring fullstack programming with JS Expert"
+                                android:text="We Are Looking For Mathematics Tutors For Elementary School Student in Grade 6"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -287,7 +303,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Fulltime / 30 Days"
+                                android:text="1 Month"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -341,7 +357,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="IT"
+                                android:text="Tutor"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -395,7 +411,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat"
-                                android:text="Rp 10.000.000"
+                                android:text="Rp 750.000"
                                 android:textColor="#393939"
                                 android:textSize="15sp"
                                 app:layout_constraintBottom_toBottomOf="parent"

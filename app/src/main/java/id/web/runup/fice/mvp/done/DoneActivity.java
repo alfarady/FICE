@@ -25,13 +25,19 @@ public class DoneActivity extends AppCompatActivity {
         mDoneText2 = findViewById(R.id.doneText2);
         mBtnHome = findViewById(R.id.doneBtnHome);
 
-        Boolean isHrd = getIntent().getBooleanExtra("hrd", false);
-        if(isHrd){
+        String isHrd = getIntent().getStringExtra("isHrd");
+        if(isHrd.equals("hrd")){
             mDoneText1.setText("Your Jobs Post Submitted");
             mDoneText2.setText("Please wait for worker apply to your jobs");
-        } else {
+        } else if(isHrd.equals("worker")) {
             mDoneText1.setText("Your Jobs Application Submitted");
             mDoneText2.setText("Please wait for notifications progress of your submission");
+        } else if(isHrd.equals("approved")) {
+            mDoneText1.setText("You've been approved a worker");
+            mDoneText2.setText("Please wait contact your worker as soon as possible");
+        } else if(isHrd.equals("rejected")) {
+            mDoneText1.setText("You've been rejected a worker");
+            mDoneText2.setText("We hope you'll find out the great worker");
         }
 
         mBtnHome.setOnClickListener(new View.OnClickListener() {

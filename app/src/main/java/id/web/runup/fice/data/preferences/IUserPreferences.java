@@ -18,4 +18,16 @@ public interface IUserPreferences {
     public Boolean getNotifReaded(int id);
 
     public void unSetNotifReaded(int id);
+
+    public void setUserNotifToken(String token);
+
+    public String getUserNotifToken();
+
+    public void unSetNotifUserToken();
+
+    public void setLocation(String coordinate);
+
+    public String getUserLocation();
+
+    public void unSetLocation();
 }

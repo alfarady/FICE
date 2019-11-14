@@ -17,6 +17,7 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.List;
 
 import id.web.runup.fice.R;
+import id.web.runup.fice.helpers.WebviewActivity;
 import id.web.runup.fice.mvp.jobdetail.JobDetailActivity;
 import id.web.runup.fice.mvp.login.LoginActivity;
 import id.web.runup.fice.mvp.register.RegisterActivity;
@@ -42,10 +43,12 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final MFeedAdapter list = mFeed.get(position);
 
-        Glide.with(mContext)
-                .asBitmap()
-                .load(list.getFeedAva())
-                .into(holder.mFeedHrdAva);
+        if(!list.getFeedAva().equals("default.jpg")) {
+            Glide.with(mContext)
+                    .asBitmap()
+                    .load(list.getFeedAva())
+                    .into(holder.mFeedHrdAva);
+        }
         holder.mFeedJobName.setText(list.getFeedJobName());
         holder.mFeedJobDesc.setText(list.getFeedJobDesc());
         holder.mFeedHrdName.setText(list.getFeedHrdName());
@@ -56,7 +59,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         holder.mLnCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext, JobDetailActivity.class));
+                Intent tipeMasuk = new Intent(mContext, JobDetailActivity.class);
+                tipeMasuk.putExtra("id_job", list.getFeedId());
+                mContext.startActivity(tipeMasuk);
             }
         });
     }

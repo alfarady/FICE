@@ -7,4 +7,5 @@ import id.web.runup.fice.data.adapter.MNotificationAdapter;
 public interface INotificationView {
     void showMainActivity();
     void initRecyclerView(List<MNotificationAdapter> mNotif);
+    void startWelcomeActivity();
 }

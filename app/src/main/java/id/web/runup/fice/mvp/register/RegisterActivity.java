@@ -1,12 +1,16 @@
 package id.web.runup.fice.mvp.register;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import dmax.dialog.SpotsDialog;
 import id.web.runup.fice.R;
 import id.web.runup.fice.mvp.AbstractView;
 import id.web.runup.fice.mvp.IPresenter;

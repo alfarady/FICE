@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.v7.widget.Toolbar
+            android:id="@+id/tolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorToolbar">
@@ -53,6 +54,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:text="Alfarady Raja"
+                            android:singleLine="true"
                             android:fontFamily="@font/neo_sans"
                             android:textSize="18sp"
                             android:textColor="#393939"/>
@@ -74,6 +76,22 @@
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar">
+            <ProgressBar
+                android:id="@+id/homeProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tolbar"
+                android:backgroundTint="@color/colorToolbar"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorAccent"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshHome"
@@ -165,7 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat_semibold"
-                                android:text="Part \nTime Job"
+                                android:text="Be Mentor"
                                 android:textColor="@color/colorWhite"
                                 android:gravity="center"
                                 android:textSize="20sp"
@@ -199,7 +217,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat_semibold"
-                                android:text="Find a Job"
+                                android:text="Be Teacher"
                                 android:textColor="@color/colorWhite"
                                 android:gravity="center"
                                 android:textSize="20sp"
@@ -271,7 +289,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat_semibold"
-                                android:text="Education"
+                                android:text="Turor"
                                 android:textColor="@color/colorWhite"
                                 android:gravity="center"
                                 android:textSize="20sp"
@@ -304,7 +322,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/montserrat_semibold"
-                                android:text="IT"
+                                android:text="Mentor"
                                 android:textColor="@color/colorWhite"
                                 android:gravity="center"
                                 android:textSize="20sp"
